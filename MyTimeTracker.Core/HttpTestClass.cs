@@ -32,6 +32,11 @@ namespace MyTimeTracker.Core
             }
         }
 
+        internal static Task SaveWorklog(string v1, string v2, string v3)
+        {
+            throw new NotImplementedException();
+        }
+
         public static byte[] convertStringtoByteArray(string userName, string userPassword)
         {
             var byteArray = Encoding.UTF8.GetBytes(userName + ":" + userPassword);
