@@ -1,5 +1,6 @@
 ﻿using MyTimeTracker.Core.Model;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MyTimeTracker.Core.Service
 {
@@ -10,14 +11,14 @@ namespace MyTimeTracker.Core.Service
 
         }
 
-        public IList<Issue> GetAssociatedIssues(Assignee assignee)
+        public async Task<IList<Issue>> GetAssociatedIssues(Assignee assignee)
         {
-            return new List<Issue>();
+            return await ServiceWrapper.GetList<Issue>("x", "x", "x");
         }
 
-        public IList<Issue> GetAvailableIssues()
+        public async Task<IList<Issue>> GetAvailableIssues()
         {
-            return new List<Issue>();
+            return await ServiceWrapper.GetList<Issue>("x", "x", "x");
         }
 
         public void SaveWorkLog(Issue issue, int seconds)
