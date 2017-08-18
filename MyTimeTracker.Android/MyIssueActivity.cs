@@ -22,9 +22,10 @@ namespace MyTimeTracker.Android
         {
             base.OnCreate(bundle);
 
-            SetContentView(Resource.Layout.Main);
+            SetContentView(Resource.Layout.MyIssueView);
 
-            var associatedTask = await _service.GetAssociatedIssues(new Core.Model.Assignee());
+            // var associatedTask = await _service.GetAssociatedIssues(new Core.Model.Assignee());
+            var associatedTask = _service.GetAssociatedIssues(new Core.Model.Assignee());
 
             var listView = FindViewById<ListView>(Resource.Id.MyIssuesListView);
             listView.Adapter = new MyIssueAdapter(this, associatedTask);

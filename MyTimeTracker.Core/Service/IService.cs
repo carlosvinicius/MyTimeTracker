@@ -7,7 +7,8 @@ namespace MyTimeTracker.Core.Service
 
     public interface IService
     {
-        Task<IList<Issue>> GetAssociatedIssues(Assignee assignee);
+        // Task<IList<Issue>> GetAssociatedIssues(Assignee assignee);
+        IList<Issue> GetAssociatedIssues(Assignee assignee);
 
         Task<IList<Issue>> GetAvailableIssues();
 

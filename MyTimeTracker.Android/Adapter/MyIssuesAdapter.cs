@@ -53,17 +53,28 @@ namespace MyTimeTracker.Android.Adapter
 
             convertView.FindViewById<TextView>(Android.Resource.Id.txtIssueTitle).Text = item.key;
             convertView.FindViewById<TextView>(Android.Resource.Id.txtIssueId).Text = item.id;
-            convertView.FindViewById<TextView>(Android.Resource.Id.txtTotalTimeSpent).Text = string.Format("Total: {0}", item.fields.timespent.ToString());
+
+            long totalTime = long.Parse(item.fields.timespent.ToString());
+            TimeSpan time = TimeSpan.FromSeconds(totalTime);
+
+            var txtTotalTimeSpent = convertView.FindViewById<TextView>(Android.Resource.Id.txtTotalTimeSpent);
+            txtTotalTimeSpent.Text = string.Format("Total: {0}", time.ToString(@"hh\:mm\:ss"));
+
+            var chrono = convertView.FindViewById<Chronometer>(Android.Resource.Id.chronoCurrentTime);
 
             convertView.FindViewById<ImageButton>(Android.Resource.Id.btnStartPause).Click += (sender, args) =>
             {
-                var chrono = convertView.FindViewById<Chronometer>(Android.Resource.Id.chronoCurrentTime);
+                chrono.Base = 0 ;
                 chrono.Start();
             };
 
             convertView.FindViewById<ImageButton>(Android.Resource.Id.btnStop).Click += (sender, args) =>
             {
-                convertView.FindViewById<Chronometer>(Android.Resource.Id.chronoCurrentTime).Stop();
+                chrono.Stop();
+                totalTime = long.Parse(item.fields.timespent.ToString()) + (((SystemClock.ElapsedRealtime() + chrono.Base) / 1000) % 60);
+
+                time = TimeSpan.FromSeconds(totalTime);
+                txtTotalTimeSpent.Text = string.Format("Total: {0}", time.ToString(@"hh\:mm\:ss"));
             };
 
 

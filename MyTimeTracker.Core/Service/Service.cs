@@ -11,7 +11,8 @@ namespace MyTimeTracker.Core.Service
 
         }
 
-        public async Task<IList<Issue>> GetAssociatedIssues(Assignee assignee)
+        //public Task<IList<Issue>> GetAssociatedIssues(Assignee assignee)
+        public IList<Issue> GetAssociatedIssues(Assignee assignee)
         {
             // return await ServiceWrapper.GetList<Issue>("carlos@gbdentretenimento.com.br", "C@rlitos83", "https://gbdentretenimento.atlassian.net/rest/api/2/search?jql=assignee=raphael+order+by+duedate");
 
