@@ -4,18 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="8dp">
-  
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-      
+                    
         <TextView
             android:id="@+id/txtIssueTitle"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:text="Some issue register"
             android:gravity="left" />
-      
         <TextView
             android:id="@+id/txtIssueId"
             android:layout_height="wrap_content"
@@ -24,7 +22,6 @@
             android:layout_below="@id/txtIssueTitle"
             android:text="ID-1234"
             android:gravity="left" />
-      
         <TextView
             android:id="@+id/txtTotalTimeSpent"
             android:layout_height="wrap_content"
@@ -33,44 +30,7 @@
             android:layout_below="@id/txtIssueTitle"
             android:layout_toRightOf="@id/txtIssueId"
             android:paddingLeft="10dp"
-            android:text="Total: 01h 00m"
+            android:text="Total: 00h 00m 00ss"
             android:gravity="left" />
-      
-        <TextView
-            android:id="@+id/txtNow"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:textStyle="bold"
-            android:layout_below="@id/txtIssueTitle"
-            android:layout_toRightOf="@id/txtTotalTimeSpent"
-            android:paddingLeft="10dp"
-            android:text="Now: "
-            android:gravity="left" />
-        
-      <Chronometer
-            android:id="@+id/chronoCurrentTime"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:paddingLeft="10dp"
-            android:layout_below="@id/txtIssueTitle"
-            android:layout_toRightOf="@id/txtNow" />
-      
-      
-        <ImageButton
-            android:id="@+id/btnStartPause"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_marginRight="40dp"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/Start" />
-      
-        <ImageButton
-            android:id="@+id/btnStop"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/Stop" />
-      
     </RelativeLayout>
-
 </LinearLayout>

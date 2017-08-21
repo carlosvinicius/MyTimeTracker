@@ -3,10 +3,30 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-  <ListView
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/MyIssuesListView" />
-  
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="*"
+        android:stretchColumns="*"
+        android:id="@+id/TrackingTableLayout">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@string/SelectIssueToTrack"
+                android:id="@+id/IssueTrakingTextView" />
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/stop"
+                android:id="@+id/StopTrackingImageButton" />
+        </TableRow>
+    </TableLayout>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/MyIssuesListView" />
 </LinearLayout>

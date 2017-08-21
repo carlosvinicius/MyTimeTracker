@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
+﻿using Android.App;
 using Android.Views;
 using Android.Widget;
 using MyTimeTracker.Core.Model;
+using System;
+using System.Collections.Generic;
 
 namespace MyTimeTracker.Android.Adapter
 {
@@ -46,37 +40,19 @@ namespace MyTimeTracker.Android.Adapter
         {
             var item = items[position];
 
-            if(convertView == null)
+            if (convertView == null)
             {
                 convertView = context.LayoutInflater.Inflate(Resource.Layout.IssueRowView, null);
             }
 
-            convertView.FindViewById<TextView>(Android.Resource.Id.txtIssueTitle).Text = item.key;
-            convertView.FindViewById<TextView>(Android.Resource.Id.txtIssueId).Text = item.id;
+            convertView.FindViewById<TextView>(Resource.Id.txtIssueTitle).Text = item.fields.summary;
+            convertView.FindViewById<TextView>(Resource.Id.txtIssueId).Text = item.key;
 
-            long totalTime = long.Parse(item.fields.timespent.ToString());
-            TimeSpan time = TimeSpan.FromSeconds(totalTime);
+            var totalTime = long.Parse(item.fields.timespent.ToString());
+            var time = TimeSpan.FromSeconds(totalTime);
 
-            var txtTotalTimeSpent = convertView.FindViewById<TextView>(Android.Resource.Id.txtTotalTimeSpent);
-            txtTotalTimeSpent.Text = string.Format("Total: {0}", time.ToString(@"hh\:mm\:ss"));
-
-            var chrono = convertView.FindViewById<Chronometer>(Android.Resource.Id.chronoCurrentTime);
-
-            convertView.FindViewById<ImageButton>(Android.Resource.Id.btnStartPause).Click += (sender, args) =>
-            {
-                chrono.Base = 0 ;
-                chrono.Start();
-            };
-
-            convertView.FindViewById<ImageButton>(Android.Resource.Id.btnStop).Click += (sender, args) =>
-            {
-                chrono.Stop();
-                totalTime = long.Parse(item.fields.timespent.ToString()) + (((SystemClock.ElapsedRealtime() + chrono.Base) / 1000) % 60);
-
-                time = TimeSpan.FromSeconds(totalTime);
-                txtTotalTimeSpent.Text = string.Format("Total: {0}", time.ToString(@"hh\:mm\:ss"));
-            };
-
+            var txtTotalTimeSpent = convertView.FindViewById<TextView>(Resource.Id.txtTotalTimeSpent);
+            txtTotalTimeSpent.Text = string.Format("Total Time Spent: {0}", time.ToString(@"dd\:hh\:mm\:ss"));
 
             return convertView;
         }

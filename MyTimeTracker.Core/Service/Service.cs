@@ -11,10 +11,11 @@ namespace MyTimeTracker.Core.Service
 
         }
 
-        //public Task<IList<Issue>> GetAssociatedIssues(Assignee assignee)
-        public IList<Issue> GetAssociatedIssues(Assignee assignee)
+        public async Task<IList<Issue>> GetAssociatedIssues()
         {
-            // return await ServiceWrapper.GetList<Issue>("carlos@gbdentretenimento.com.br", "C@rlitos83", "https://gbdentretenimento.atlassian.net/rest/api/2/search?jql=assignee=raphael+order+by+duedate");
+            return await ServiceWrapper.GetList<Issue>("carlos@gbdentretenimento.com.br", "C@rlitos83",
+
+                "https://gbdentretenimento.atlassian.net/rest/api/2/search?jql=assignee=currentUser()&sprint%20in%20openSprints%20()+order+by+duedate&fields=timespent,summary");
 
             var items = new List<Issue>()
             {
@@ -26,14 +27,13 @@ namespace MyTimeTracker.Core.Service
             return items;
         }
 
-        public async Task<IList<Issue>> GetAvailableIssues()
+        public async void SaveWorklog(Worklog worklog)
         {
-            return await ServiceWrapper.GetList<Issue>("x", "x", "x");
-        }
+            var apiUrl = string.Format(
+                "https://gbdentretenimento.atlassian.net/rest/api/2/issue/{0}/worklog",
+                "ICGERAL-4");// worklog.issueId);
 
-        public async void SaveWorkLog(Issue issue, int seconds)
-        {
-            await ServiceWrapper.SaveWorklog("x", "x", "x");
+            ServiceWrapper.SaveWorklog("carlos@gbdentretenimento.com.br", "C@rlitos83", apiUrl, worklog);
         }
 
         public void RestrictActiveSprint()

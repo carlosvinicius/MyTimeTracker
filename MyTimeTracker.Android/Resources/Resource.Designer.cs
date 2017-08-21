@@ -69,26 +69,23 @@ namespace MyTimeTracker.Android
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050007
-			public const int MyIssuesListView = 2131034119;
-			
-			// aapt resource value: 0x7f050005
-			public const int btnStartPause = 2131034117;
+			// aapt resource value: 0x7f050004
+			public const int IssueTrakingTextView = 2131034116;
 			
 			// aapt resource value: 0x7f050006
-			public const int btnStop = 2131034118;
+			public const int MyIssuesListView = 2131034118;
 			
-			// aapt resource value: 0x7f050004
-			public const int chronoCurrentTime = 2131034116;
+			// aapt resource value: 0x7f050005
+			public const int StopTrackingImageButton = 2131034117;
+			
+			// aapt resource value: 0x7f050003
+			public const int TrackingTableLayout = 2131034115;
 			
 			// aapt resource value: 0x7f050001
 			public const int txtIssueId = 2131034113;
 			
 			// aapt resource value: 0x7f050000
 			public const int txtIssueTitle = 2131034112;
-			
-			// aapt resource value: 0x7f050003
-			public const int txtNow = 2131034115;
 			
 			// aapt resource value: 0x7f050002
 			public const int txtTotalTimeSpent = 2131034114;
@@ -125,11 +122,11 @@ namespace MyTimeTracker.Android
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040001
-			public const int ApplicationName = 2130968577;
-			
 			// aapt resource value: 0x7f040000
-			public const int Hello = 2130968576;
+			public const int ApplicationName = 2130968576;
+			
+			// aapt resource value: 0x7f040001
+			public const int SelectIssueToTrack = 2130968577;
 			
 			static String()
 			{
