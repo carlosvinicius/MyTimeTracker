@@ -1,13 +1,14 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
-using MyTimeTracker.Core.Service;
 using MyTimeTracker.Core.Model;
 using MyTimeTracker.Android.Adapter;
 using System.Timers;
 using System.Collections.Generic;
 using System;
 using Android.Views;
+using Service = MyTimeTracker.Core.Service.Service;
+using MyTimeTracker.Android.Provider;
 
 namespace MyTimeTracker.Android
 {
@@ -22,6 +23,8 @@ namespace MyTimeTracker.Android
         private int _position;
 
         private MyIssueAdapter myIssueAdapter;
+
+        private Service _service;
 
         #region Components
         private ListView _myIssuesListView;
@@ -42,7 +45,10 @@ namespace MyTimeTracker.Android
 
             SetContentView(Resource.Layout.MyIssuesView);
 
-            _associatedIssueList = Core.Service.Service.GetAssociatedIssues();
+
+            _service = new Service(new SecuredDataProvider(this.BaseContext));
+
+            _associatedIssueList = _service.GetAssociatedIssues();
 
             InitializeComponents();
             EventHandlers();
@@ -77,7 +83,7 @@ namespace MyTimeTracker.Android
             _currentWorklog.TimeSpentInSeconds = (int)DateTime.Now.Subtract(_currentWorklog.Started)
                                                                                     .TotalSeconds;
             //TODO: Function to Save in a offline case
-            Core.Service.Service.SaveWorklog(_currentWorklog);
+            _service.SaveWorklog(_currentWorklog);
 
             var totalTime = int.Parse(_associatedIssueList[_position].fields.timespent.ToString());
             _associatedIssueList[_position].fields.timespent = totalTime + _currentWorklog.TimeSpentInSeconds;

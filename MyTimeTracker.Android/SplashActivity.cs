@@ -9,6 +9,8 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using MyTimeTracker.Android.Provider;
+using Service = MyTimeTracker.Core.Service.Service;
 
 namespace MyTimeTracker.Android
 {
@@ -19,13 +21,13 @@ namespace MyTimeTracker.Android
         {
             base.OnCreate(savedInstanceState);
 
-            if (Core.Service.Service.Login())
+            if (new Service(new SecuredDataProvider(this.BaseContext)).Login())
             {
-                StartActivity(typeof(ConfigurationActivity));
+                StartActivity(typeof(MyIssuesActivity)); 
             }
             else
             {
-                StartActivity(typeof(MyIssuesActivity));
+                StartActivity(typeof(ConfigurationActivity));
             }
         }
     }

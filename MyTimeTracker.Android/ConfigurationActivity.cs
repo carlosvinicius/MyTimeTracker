@@ -4,6 +4,8 @@ using Android.OS;
 using Android.Widget;
 using System.Collections.Generic;
 using MyTimeTracker.Core.Provider;
+using MyTimeTracker.Android.Provider;
+using Service = MyTimeTracker.Core.Service.Service;
 
 namespace MyTimeTracker.Android
 {
@@ -18,10 +20,14 @@ namespace MyTimeTracker.Android
         private Button _ConnectionTestButton;
         #endregion
 
+        private ISecuredDataProvider _provider;
+        
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.ConfigurationView);
+
+            _provider = new SecuredDataProvider(this.BaseContext);
 
             InitializeComponents();
             EventHandlers();
@@ -30,7 +36,7 @@ namespace MyTimeTracker.Android
 
         private void FindData()
         {
-            var properties = SecuredDataProvider.Retrieve();
+            var properties = _provider.Retrieve();
             _domainEditText.Text = properties.ContainsValue("Domain") ? properties["Domain"] : string.Empty;
             _userEditText.Text = properties.ContainsValue("User") ? properties["User"] : string.Empty;
             _passwordEditText.Text = properties.ContainsValue("Password") ? properties["Password"] : string.Empty;
@@ -53,7 +59,7 @@ namespace MyTimeTracker.Android
 
         private void ConnectionTestButtonClick(object sender, EventArgs e)
         {
-            if (Core.Service.Service.ValidateCredentials(_domainEditText.Text,
+            if (new Service(new SecuredDataProvider(this.BaseContext)).ValidateCredentials(_domainEditText.Text,
                                             _userEditText.Text,
                                             _passwordEditText.Text))
             {
@@ -77,7 +83,7 @@ namespace MyTimeTracker.Android
             properties.Add("User", _userEditText.Text);
             properties.Add("Password", _passwordEditText.Text);
 
-            SecuredDataProvider.Store(_userEditText.Text, properties);
+            _provider.Store(_userEditText.Text, properties);
             this.Finish();
         }
 

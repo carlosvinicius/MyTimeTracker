@@ -26,6 +26,32 @@ namespace MyTimeTracker.Android
 		
 		public static void UpdateIdValues()
 		{
+			global::Xamarin.Auth.Resource.Animation.slide_in_right = global::MyTimeTracker.Android.Resource.Animation.slide_in_right;
+			global::Xamarin.Auth.Resource.Animation.slide_out_left = global::MyTimeTracker.Android.Resource.Animation.slide_out_left;
+			global::Xamarin.Auth.Resource.Drawable.ic_arrow_back = global::MyTimeTracker.Android.Resource.Drawable.ic_arrow_back;
+			global::Xamarin.Auth.Resource.Id.webview = global::MyTimeTracker.Android.Resource.Id.webview;
+			global::Xamarin.Auth.Resource.Layout.activity_webview = global::MyTimeTracker.Android.Resource.Layout.activity_webview;
+			global::Xamarin.Auth.Resource.String.ApplicationName = global::MyTimeTracker.Android.Resource.String.ApplicationName;
+			global::Xamarin.Auth.Resource.String.title_activity_webview = global::MyTimeTracker.Android.Resource.String.title_activity_webview;
+		}
+		
+		public partial class Animation
+		{
+			
+			// aapt resource value: 0x7f040000
+			public const int slide_in_right = 2130968576;
+			
+			// aapt resource value: 0x7f040001
+			public const int slide_out_left = 2130968577;
+			
+			static Animation()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Animation()
+			{
+			}
 		}
 		
 		public partial class Attribute
@@ -44,8 +70,8 @@ namespace MyTimeTracker.Android
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f040000
-			public const int WhiteOpaque = 2130968576;
+			// aapt resource value: 0x7f060000
+			public const int WhiteOpaque = 2131099648;
 			
 			static Color()
 			{
@@ -61,19 +87,22 @@ namespace MyTimeTracker.Android
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int Icon = 2130837504;
+			public const int ic_arrow_back = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int Splash = 2130837505;
+			public const int Icon = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int SplashBackground = 2130837506;
+			public const int Splash = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int Start = 2130837507;
+			public const int SplashBackground = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int Stop = 2130837508;
+			public const int Start = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int Stop = 2130837509;
 			
 			static Drawable()
 			{
@@ -88,44 +117,47 @@ namespace MyTimeTracker.Android
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f070003
-			public const int ConnectionTestButton = 2131165187;
+			// aapt resource value: 0x7f080004
+			public const int ConnectionTestButton = 2131230724;
 			
-			// aapt resource value: 0x7f070000
-			public const int DomainEditText = 2131165184;
+			// aapt resource value: 0x7f080001
+			public const int DomainEditText = 2131230721;
 			
-			// aapt resource value: 0x7f07000c
-			public const int EmptyIssueListTextView = 2131165196;
+			// aapt resource value: 0x7f08000d
+			public const int EmptyIssueListTextView = 2131230733;
 			
-			// aapt resource value: 0x7f070005
-			public const int IssueIdTextView = 2131165189;
+			// aapt resource value: 0x7f080006
+			public const int IssueIdTextView = 2131230726;
 			
-			// aapt resource value: 0x7f070007
-			public const int IssueTitleTextView = 2131165191;
+			// aapt resource value: 0x7f080008
+			public const int IssueTitleTextView = 2131230728;
 			
-			// aapt resource value: 0x7f070008
-			public const int IssueTrackingTableLayout = 2131165192;
+			// aapt resource value: 0x7f080009
+			public const int IssueTrackingTableLayout = 2131230729;
 			
-			// aapt resource value: 0x7f070009
-			public const int IssueTrackingTextView = 2131165193;
+			// aapt resource value: 0x7f08000a
+			public const int IssueTrackingTextView = 2131230730;
 			
-			// aapt resource value: 0x7f07000b
-			public const int MyIssuesListView = 2131165195;
+			// aapt resource value: 0x7f08000c
+			public const int MyIssuesListView = 2131230732;
 			
-			// aapt resource value: 0x7f070002
-			public const int PasswordEditText = 2131165186;
+			// aapt resource value: 0x7f080003
+			public const int PasswordEditText = 2131230723;
 			
-			// aapt resource value: 0x7f070004
-			public const int SaveButton = 2131165188;
+			// aapt resource value: 0x7f080005
+			public const int SaveButton = 2131230725;
 			
-			// aapt resource value: 0x7f07000a
-			public const int StopTrackingImageButton = 2131165194;
+			// aapt resource value: 0x7f08000b
+			public const int StopTrackingImageButton = 2131230731;
 			
-			// aapt resource value: 0x7f070006
-			public const int TotalTextView = 2131165190;
+			// aapt resource value: 0x7f080007
+			public const int TotalTextView = 2131230727;
 			
-			// aapt resource value: 0x7f070001
-			public const int UserEditText = 2131165185;
+			// aapt resource value: 0x7f080002
+			public const int UserEditText = 2131230722;
+			
+			// aapt resource value: 0x7f080000
+			public const int webview = 2131230720;
 			
 			static Id()
 			{
@@ -141,13 +173,16 @@ namespace MyTimeTracker.Android
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int ConfigurationView = 2130903040;
+			public const int activity_webview = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int IssueRowView = 2130903041;
+			public const int ConfigurationView = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int MyIssuesView = 2130903042;
+			public const int IssueRowView = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int MyIssuesView = 2130903043;
 			
 			static Layout()
 			{
@@ -162,44 +197,47 @@ namespace MyTimeTracker.Android
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int ApplicationName = 2131034112;
-			
-			// aapt resource value: 0x7f05000a
-			public const int ConnectionTestButton = 2131034122;
-			
-			// aapt resource value: 0x7f05000c
-			public const int ConnectionTestFailedMessage = 2131034124;
+			// aapt resource value: 0x7f050001
+			public const int ApplicationName = 2131034113;
 			
 			// aapt resource value: 0x7f05000b
-			public const int ConnectionTestSucceedMessage = 2131034123;
+			public const int ConnectionTestButton = 2131034123;
 			
-			// aapt resource value: 0x7f050006
-			public const int DomainTextView = 2131034118;
+			// aapt resource value: 0x7f05000d
+			public const int ConnectionTestFailedMessage = 2131034125;
 			
-			// aapt resource value: 0x7f050002
-			public const int IssueTrackingMessage = 2131034114;
-			
-			// aapt resource value: 0x7f050003
-			public const int NoIssuesAvailableMessage = 2131034115;
-			
-			// aapt resource value: 0x7f050008
-			public const int PasswordTextView = 2131034120;
-			
-			// aapt resource value: 0x7f050009
-			public const int SaveButton = 2131034121;
-			
-			// aapt resource value: 0x7f050001
-			public const int SelectIssueToTrackMessage = 2131034113;
+			// aapt resource value: 0x7f05000c
+			public const int ConnectionTestSucceedMessage = 2131034124;
 			
 			// aapt resource value: 0x7f050007
-			public const int UserTextView = 2131034119;
+			public const int DomainTextView = 2131034119;
+			
+			// aapt resource value: 0x7f050003
+			public const int IssueTrackingMessage = 2131034115;
 			
 			// aapt resource value: 0x7f050004
-			public const int WorklogSavedMessage = 2131034116;
+			public const int NoIssuesAvailableMessage = 2131034116;
+			
+			// aapt resource value: 0x7f050009
+			public const int PasswordTextView = 2131034121;
+			
+			// aapt resource value: 0x7f05000a
+			public const int SaveButton = 2131034122;
+			
+			// aapt resource value: 0x7f050002
+			public const int SelectIssueToTrackMessage = 2131034114;
+			
+			// aapt resource value: 0x7f050008
+			public const int UserTextView = 2131034120;
 			
 			// aapt resource value: 0x7f050005
-			public const int WorklogTrackingStartedMessage = 2131034117;
+			public const int WorklogSavedMessage = 2131034117;
+			
+			// aapt resource value: 0x7f050006
+			public const int WorklogTrackingStartedMessage = 2131034118;
+			
+			// aapt resource value: 0x7f050000
+			public const int title_activity_webview = 2131034112;
 			
 			static String()
 			{
@@ -214,8 +252,8 @@ namespace MyTimeTracker.Android
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f060000
-			public const int SplashTheme = 2131099648;
+			// aapt resource value: 0x7f070000
+			public const int SplashTheme = 2131165184;
 			
 			static Style()
 			{
