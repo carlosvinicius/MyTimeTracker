@@ -45,14 +45,14 @@ namespace MyTimeTracker.Android.Adapter
                 convertView = context.LayoutInflater.Inflate(Resource.Layout.IssueRowView, null);
             }
 
-            convertView.FindViewById<TextView>(Resource.Id.txtIssueTitle).Text = item.fields.summary;
-            convertView.FindViewById<TextView>(Resource.Id.txtIssueId).Text = item.key;
+            convertView.FindViewById<TextView>(Resource.Id.IssueTitleTextView).Text = item.fields.summary;
+            convertView.FindViewById<TextView>(Resource.Id.IssueIdTextView).Text = item.key;
 
             var totalTime = long.Parse(item.fields.timespent.ToString());
             var time = TimeSpan.FromSeconds(totalTime);
 
-            var txtTotalTimeSpent = convertView.FindViewById<TextView>(Resource.Id.txtTotalTimeSpent);
-            txtTotalTimeSpent.Text = string.Format("Total Time Spent: {0}", time.ToString(@"dd\:hh\:mm\:ss"));
+            var totalTextView = convertView.FindViewById<TextView>(Resource.Id.TotalTextView);
+            totalTextView.Text = string.Format("Total: {0}", time.ToString(@"dd'd 'hh'h 'mm'm"));
 
             return convertView;
         }

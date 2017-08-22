@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="ApplicationName">MyTimeTracker.Android</string>
-  <string name="SelectIssueToTrack">Select an issue to track</string>
+  <string name="ApplicationName">My Time Tracker</string>
+  
+  <!-- My Issues Activity -->
+  <string name="SelectIssueToTrackMessage">Select an issue to track</string>
+  <string name="IssueTrackingMessage">{0} | Current Time: {1}</string>
+  <string name="NoIssuesAvailableMessage">There is no issues available</string>
+
+  <string name="WorklogSavedMessage">Worklog Saved</string>
+  <string name="WorklogTrackingStartedMessage">Worklog Tracking Started</string>
+
+  <!-- Configuration Activity -->
+  <string name="DomainTextView">Domain</string>
+  <string name="UserTextView">User</string>
+  <string name="PasswordTextView">Password</string>
+
+  <string name="SaveButton">Save</string>
+  <string name="ConnectionTestButton">Test Connection</string>
+  
+  <string name="ConnectionTestSucceedMessage">Connection test succeed</string>
+  <string name="ConnectionTestFailedMessage">Connection test failed</string>
+
 </resources>

@@ -8,7 +8,7 @@
         android:layout_height="wrap_content"
         android:shrinkColumns="*"
         android:stretchColumns="*"
-        android:id="@+id/TrackingTableLayout">
+        android:id="@+id/IssueTrackingTableLayout">
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -16,8 +16,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="@string/SelectIssueToTrack"
-                android:id="@+id/IssueTrakingTextView" />
+                android:text="@string/SelectIssueToTrackMessage"
+                android:id="@+id/IssueTrackingTextView" />
             <ImageButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -27,6 +27,13 @@
     </TableLayout>
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:id="@+id/MyIssuesListView" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/NoIssuesAvailableMessage"
+        android:id="@+id/EmptyIssueListTextView" />
 </LinearLayout>
