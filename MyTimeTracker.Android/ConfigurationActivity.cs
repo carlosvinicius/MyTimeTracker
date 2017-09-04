@@ -84,7 +84,15 @@ namespace MyTimeTracker.Android
             properties.Add("Password", _passwordEditText.Text);
 
             _provider.Store(_userEditText.Text, properties);
-            this.Finish();
+
+            if (new Service(new SecuredDataProvider(this.BaseContext)).Login())
+            {
+                Toast.MakeText(this, GetString(Resource.String.InvalidConnectionDataMessage), ToastLength.Short).Show();
+            }
+            else
+            {
+                this.Finish();
+            }
         }
 
         public override void Finish()

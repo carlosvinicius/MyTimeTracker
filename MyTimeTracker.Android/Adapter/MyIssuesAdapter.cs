@@ -52,7 +52,7 @@ namespace MyTimeTracker.Android.Adapter
             var time = TimeSpan.FromSeconds(totalTime);
 
             var totalTextView = convertView.FindViewById<TextView>(Resource.Id.TotalTextView);
-            totalTextView.Text = string.Format("Total: {0}", time.ToString(@"dd:hh:mm:ss"));
+            totalTextView.Text = string.Format("Total: {0}", time.ToString(@"dd\dhh\hmm\m"));
 
             return convertView;
         }

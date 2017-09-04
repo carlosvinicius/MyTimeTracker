@@ -20,5 +20,6 @@
   
   <string name="ConnectionTestSucceedMessage">Connection test succeed</string>
   <string name="ConnectionTestFailedMessage">Connection test failed</string>
+  <string name="InvalidConnectionDataMessage">Invalid connection data</string>
 
 </resources>

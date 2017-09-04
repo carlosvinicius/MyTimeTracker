@@ -212,6 +212,9 @@ namespace MyTimeTracker.Android
 			// aapt resource value: 0x7f050007
 			public const int DomainTextView = 2131034119;
 			
+			// aapt resource value: 0x7f05000e
+			public const int InvalidConnectionDataMessage = 2131034126;
+			
 			// aapt resource value: 0x7f050003
 			public const int IssueTrackingMessage = 2131034115;
 			

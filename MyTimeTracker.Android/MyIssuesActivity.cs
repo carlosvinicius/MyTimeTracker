@@ -80,8 +80,9 @@ namespace MyTimeTracker.Android
                 return;
             }
 
-            _currentWorklog.TimeSpentInSeconds = (int)DateTime.Now.Subtract(_currentWorklog.Started)
-                                                                                    .TotalSeconds;
+            var timeSpent = (int)DateTime.Now.Subtract(_currentWorklog.Started).TotalSeconds;
+            _currentWorklog.TimeSpentInSeconds = timeSpent < 60 ? 60 : _currentWorklog.TimeSpentInSeconds;
+
             //TODO: Function to Save in a offline case
             _service.SaveWorklog(_currentWorklog);
 

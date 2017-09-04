@@ -19,9 +19,9 @@ namespace MyTimeTracker.Core.Service
             _provider = provider;
             var properties = _provider.Retrieve();
 
-            _domain = properties.ContainsValue("Domain") ? properties["Domain"] : string.Empty;
-            var userName = properties.ContainsValue("User") ? properties["User"] : string.Empty;
-            var password = properties.ContainsValue("Password") ? properties["Password"] : string.Empty;
+            _domain = "gbdentretenimento";// properties.ContainsKey("Domain") ? properties["Domain"] : string.Empty;
+            var userName = "carlos@gbdentretenimento.com.br";//properties.ContainsKey("User") ? properties["User"] : string.Empty;
+            var password = "C@rlitos83";// properties.ContainsKey("Password") ? properties["Password"] : string.Empty;
 
             _apiService = new ApiService(_domain, userName, password);
         }
@@ -52,7 +52,7 @@ namespace MyTimeTracker.Core.Service
             {
                 comment = "My TimeTracker Input",
                 started = worklog.Started.ToString("yyyy-MM-dd'T'HH:mm:ss.fffzz00"),
-                timeSpentSeconds = worklog.TimeSpentInSeconds < 60 ? 60 : worklog.TimeSpentInSeconds
+                timeSpentSeconds = worklog.TimeSpentInSeconds
             };
 
             return _apiService.PostItem(apiUrl, item).Result;
